@@ -2,7 +2,7 @@ import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Playlist } from './entity/playlist.entity';
 import { Repository } from 'typeorm';
-import { CreatePlaylistDto } from './dto/playlist.dto';
+import { CreatePlaylistDto } from '@app/common';
 
 @Injectable()
 export class PlaylistService {

@@ -46,15 +46,6 @@
         "tsConfigPath": "apps/auth/tsconfig.app.json"
       }
     },
-    "common": {
-      "type": "library",
-      "root": "libs/common",
-      "entryFile": "index",
-      "sourceRoot": "libs/common/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/common/tsconfig.lib.json"
-      }
-    },
     "dashboard": {
       "type": "application",
       "root": "apps/dashboard",
@@ -62,6 +53,15 @@
       "sourceRoot": "apps/dashboard/src",
       "compilerOptions": {
         "tsConfigPath": "apps/dashboard/tsconfig.app.json"
+      }
+    },
+    "common": {
+      "type": "library",
+      "root": "libs/common",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
     }
   }

@@ -1,6 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { PlaylistService } from './playlist.service';
-import { MessagePattern } from '@nestjs/microservices';
+import { EventPattern, MessagePattern } from '@nestjs/microservices';
+import { CreatePlaylistDto } from '@app/common';
 
 @Controller()
 export class PlaylistController {
@@ -9,5 +10,10 @@ export class PlaylistController {
   @MessagePattern({ cmd: 'get-all-playlists' })
   async getAllPlaylists() {
     return await this.playlistService.findAllPlaylist();
+  }
+
+  @EventPattern({ cmd: 'create-playlist' })
+  async createPlaylist(createPlaylistDto: CreatePlaylistDto) {
+    return await this.playlistService.createPlaylist(createPlaylistDto);
   }
 }

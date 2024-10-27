@@ -7,7 +7,11 @@ async function bootstrap() {
     PlaylistModule,
     {
       transport: Transport.RMQ,
-      options: { urls: ['amqp://rabbitmq:5672'], queue: 'playlist_queue' },
+      options: {
+        urls: ['amqp://rabbitmq:5672'],
+        queue: 'playlist_queue',
+        queueOptions: { durable: true },
+      },
     },
   );
   await app.listen();

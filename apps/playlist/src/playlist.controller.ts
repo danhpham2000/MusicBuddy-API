@@ -16,4 +16,9 @@ export class PlaylistController {
   async createPlaylist(createPlaylistDto: CreatePlaylistDto) {
     return await this.playlistService.createPlaylist(createPlaylistDto);
   }
+
+  @MessagePattern({ cmd: 'get-one-playlist' })
+  async getPlaylist(playlistId: number) {
+    return await this.playlistService.findPlaylistById(playlistId);
+  }
 }

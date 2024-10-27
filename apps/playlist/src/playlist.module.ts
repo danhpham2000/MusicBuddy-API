@@ -3,6 +3,7 @@ import { PlaylistController } from './playlist.controller';
 import { PlaylistService } from './playlist.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { Playlist } from './entity/playlist.entity';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ConfigModule } from '@nestjs/config';
       synchronize: true,
       logging: true,
     }),
+    TypeOrmModule.forFeature([Playlist]),
   ],
   controllers: [PlaylistController],
   providers: [PlaylistService],
